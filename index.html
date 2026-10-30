@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ritm Fabrikasi</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>Ritm<br>Fabrikasi</h1>
+      <p>Brauzerdagi musiqa studiyasi. Katakchalarni bosing, o'z ritmingizni yarating va klaviatura bilan ustiga kuy chaling.</p>
+    </div>
+    <canvas id="viz" aria-label="Tovush vizualizatsiyasi"></canvas>
+  </header>
+
+  <section class="panel" aria-label="Boshqaruv">
+    <div class="bar">
+      <button id="play" class="btn play" aria-pressed="false">Boshlash</button>
+      <div id="presets" class="bar tight"></div>
+    </div>
+    <div class="bar sliders">
+      <label>Tempo <input id="bpm" type="range" min="60" max="180" value="100"><output></output></label>
+      <label>Sving <input id="swing" type="range" min="0" max="60" value="0"><output></output></label>
+      <label>Ovoz <input id="vol" type="range" min="0" max="100" value="80"><output></output></label>
+      <label>Aks-sado <input id="echo" type="range" min="0" max="70" value="25"><output></output></label>
+    </div>
+  </section>
+
+  <section class="panel" aria-label="Sekvenser">
+    <div id="seq"></div>
+    <div class="bar tight foot">
+      <button id="rnd" class="btn">Tasodifiy</button>
+      <button id="clr" class="btn">Tozalash</button>
+      <button id="save" class="btn">Saqlash</button>
+      <span id="msg" role="status"></span>
+    </div>
+  </section>
+
+  <section class="panel" aria-label="Sintezator">
+    <div class="bar">
+      <div id="waves" class="bar tight"></div>
+      <label>Yumshoqlik <input id="cut" type="range" min="300" max="6000" value="2400"><output></output></label>
+      <label>Uzunlik <input id="rel" type="range" min="10" max="150" value="30"><output></output></label>
+    </div>
+    <div id="keys" class="keys"></div>
+    <p class="hint">Klaviatura: A S D F G H J K · Boshlash/to'xtatish: Probel</p>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
